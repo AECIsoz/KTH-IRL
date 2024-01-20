@@ -1,0 +1,364 @@
+/* general styles ===========================================================================*/
+* {
+  box-sizing: border-box;
+}
+body {
+  max-width: 430px; /* customised for iPhone 14 */
+  margin: 0 auto;
+  font-family: "Figtree", sans-serif;
+  position: relative;
+}
+
+p {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.align-right {
+  text-align: right;
+  justify-content: flex-end;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 90px;
+  margin-bottom: 100px;
+  padding: 0 20px;
+}
+
+/* used in details page ====================================================================*/
+.narrow-container {
+  width: 90%;
+  padding: 0 20px;
+  margin: 0 auto 100px auto;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.space-between {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.space-evenly {
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.accent {
+  background-color: #ebe5e0;
+  justify-content: center;
+}
+
+.btn {
+  background-color: white;
+  border: 2px solid black;
+}
+
+.btn,
+.btn-select {
+  border-radius: 45px;
+  width: 120px;
+  padding: 10px;
+  margin: 10px;
+  transition: all 0.5s linear;
+}
+
+.btn-select {
+  border: none;
+}
+
+.btn-edit {
+  width: 80px;
+  padding: 5px;
+}
+
+.btn a,
+.btn-select a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.btn a {
+  color: black;
+}
+
+.btn-select a {
+  color: white;
+}
+
+.btn:hover,
+.btn-select:hover {
+  background-color: #ebe5e0;
+  font-style: italic;
+}
+
+#history-btn,
+#login-btn,
+#signup-btn {
+  text-transform: uppercase;
+  color: black;
+}
+.card {
+  margin: 20px 0;
+  border-radius: 8px;
+  padding: 10px 20px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* header styles ======================================================================= */
+header {
+  width: 430px;
+  background-color: #ebe5e0;
+  padding: 20px 20px 10px 20px;
+  position: fixed;
+  top: 0;
+}
+
+header p {
+  font-family: "Figtree", sans-serif;
+  text-transform: uppercase;
+  font-size: 12px;
+  margin-left: 20px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.left {
+  width: 80%;
+}
+
+.logo {
+  width: 50px;
+  padding-left: 15px;
+}
+
+/* user login, signup, logout styles ==================================================*/
+
+.user-form {
+  margin: 10px;
+}
+
+.flex-form label {
+  display: block;
+  padding: 5px 0;
+}
+
+/* home page styles =============================================================== */
+
+.main-image {
+  margin: 20px auto;
+}
+
+.main-image img {
+  width: 300px;
+  border-radius: 8px;
+}
+
+/* displaying the round image of scales and text around */
+.grid {
+  display: grid;
+  grid-template-areas:
+    ".    .    cust .    ."
+    "fund .    .    .    tech"
+    ".    .    kthi .    ."
+    "team .    .    .    busi"
+    ".    .    iprl .    .";
+  grid-template-rows: repeat(5, 70px);
+  grid-template-columns: repeat(5, 1fr);
+  margin: 0 auto;
+  background-image: url("../assets/spider_light_segments.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.grid-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 110px;
+}
+
+.grid-row p {
+  font-size: 14px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* align text on top half of circle*/
+#cust,
+#fund,
+#tech {
+  display: flex;
+  align-items: flex-end;
+}
+/* align text on bottom half of circle */
+#team,
+#busi,
+#iprl {
+  display: flex;
+  align-items: flex-start;
+}
+
+#cust {
+  grid-area: cust;
+}
+
+#fund {
+  grid-area: fund;
+}
+
+#tech {
+  grid-area: tech;
+}
+
+#kthi {
+  grid-area: kthi;
+}
+
+#team {
+  grid-area: team;
+}
+
+#busi {
+  grid-area: busi;
+}
+
+#iprl {
+  grid-area: iprl;
+}
+
+/* animating the text of the scales image */
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.text-background {
+  animation: drop-in 2s ease 500ms backwards;
+}
+
+@keyframes drop-in {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0px);
+  }
+}
+
+/* dashboard page styles =============================================================== */
+
+.scales-list {
+  display: flex;
+}
+
+.scales-list div {
+  width: 140px;
+  height: 20px;
+  text-align: center;
+  font-size: 12px;
+  padding-top: 2px;
+  border-radius: 5px;
+}
+
+.scales-title {
+  max-width: 50%;
+}
+
+/* edit scales page ====================================================================== */
+
+#btn_1 {
+  background-color: #ae0f0b;
+  border: 2px solid #ae0f0b;
+}
+
+#btn_2 {
+  background-color: #e63312;
+  border: 2px solid #e63312;
+}
+
+#btn_3 {
+  background-color: #ec6607;
+  border: 2px solid #ec6607;
+}
+
+#btn_4 {
+  background-color: #f7b101;
+  border: 2px solid #f7b101;
+}
+
+#btn_5 {
+  background-color: #ffcc00;
+  border: 2px solid #ffcc00;
+}
+
+#btn_6 {
+  background-color: #aecb54;
+  border: 2px solid #aecb54;
+}
+
+#btn_7 {
+  background-color: #73b959;
+  border: 2px solid #73b959;
+}
+
+#btn_8 {
+  background-color: #008f51;
+  border: 2px solid #008f51;
+}
+
+#btn_9 {
+  background-color: #00603b;
+  border: 2px solid #00603b;
+}
+
+/* footer styles ===================================================================== */
+footer {
+  width: 430px;
+  background-color: #ebe5e0;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+}
+
+.icon {
+  width: 25px;
+}
+
+footer ul {
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-left: 0;
+}
+
+footer ul li {
+  list-style-type: none;
+  border-radius: 3px;
+  padding: 5px;
+  margin-left: 25px;
+}
+
+footer ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+#home {
+  background-color: #e63312;
+}
+
+#dash {
+  background-color: #f7b101;
+}
+
+#user {
+  background-color: #73b959;
+}
